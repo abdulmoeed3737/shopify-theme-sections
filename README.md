@@ -1,1 +1,3 @@
-<h1>Influencer Reviews Section for Shopify theme</h1>
+<h1>Influencer Reviews Section for Shopify themes</h1>
+<hr>
+
