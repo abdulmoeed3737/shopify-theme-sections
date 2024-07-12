@@ -1,34 +1,40 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@7/swiper-bundle.min.css" />
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@7/swiper-bundle.min.css" />
 <style>
-  .swiper {
-    width: 100%;
-    height: 100%;
+  .{{ section.id }}-custom-product-slider {
+    margin-top: 80px;
   }
+    .{{ section.id }}-custom-product-slider h1{
+      font-size: 46px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
 
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-  .swiper-slide img,
-  .swiper-slide video {
-    width: 100%;
-    border-radius: 15px 15px 0 0;
-  }
-  .swiper-button-next,
-  .swiper-button-prev {
+    .swiper-slide img, .swiper-slide video {
+      width: 100%;
+      border-radius: 0px;
+      margin-top: 60px;
+    }
+  .swiper-button-next, .swiper-button-prev {
     display: flex !important;
     color: #b69a7e;
     background: #0F211E;
     border-radius: 100%;
     padding: 25px;
   }
-  .swiper-button-next:after,
-  .swiper-button-prev:after {
+  .swiper-button-next:after, .swiper-button-prev:after {
     font-size: 18px;
     font-weight: 900;
   }
@@ -38,7 +44,7 @@
     position: relative;
     flex-direction: column;
     margin: 40px;
-    box-shadow: 0 8px 30px 1px;
+    box-shadow: 0px 8px 30px 1px;
     border-radius: 15px;
   }
 
@@ -47,137 +53,57 @@
     font-size: 24px;
     background: #0F211E;
     color: #b69a7e;
-    border-radius: 0 0 15px 15px;
+    border-radius: 0px 0px 15px 15px;
   }
   .slider-card .info {
     display: flex;
-    position: absolute;
-    padding: 10px 0;
+    padding: 10px 0px;
     justify-content: center;
     align-items: center;
     gap: 20px;
     width: 100%;
     color: white;
-    background: #0f211e8f;
-    border-radius: 15px 15px 0 0;
+    background: #0F211E;
+    border-radius: 15px 15px 0px 0px;
   }
   .slider-card .info img {
     width: 40px;
     height: 40px;
     border-radius: 100%;
   }
+
+  .swiper-slide img, .swiper-slide video {
+    margin-top: 0px !important;
+  }
 </style>
-<div class="{{ section.id }}-custom-product-slider">
+<div class="{{ section.id }}-custom-product-slider container--large">
   <h1>
-    Custom Product Slider
+    {{ section.settings.main-heading }}
   </h1>
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        {% case block.type %}
+        {% when 'slide' %}
       <div class="swiper-slide">
         <div class="slider-card">
           <div class="info">
-            <img src="https://cdn.shopify.com/s/files/1/0827/1410/0036/files/Liquid-beans-coffee-extract-nieuwsbrief-1365x2048.jpg?v=1714200840" />
-            <span>test name</span>
+            <img src="{{ block.settings.influencer_image.src | img_url: 'master'}}"/>
+            <span>{{ block.settings.influencer_name }}</span>
           </div>
-          <video
-            autoplay
-            muted
-            loop>
-            <source src="https://cdn.shopify.com/videos/c/o/v/2bf4bbcbd67b40909bbf2b6172afdcaf.mp4" type="video/mp4">
-          </video>
-          <div class="text">dummy text</div>
+          <video autoplay muted loop playsinline controls>
+          <source src="{{ block.settings.review_video.sources[1].url }}" type="video/mp4">
+        </video>
+          <div class="text">{{ block.settings.product_title }}</div>
         </div>
       </div>
-      <div class="swiper-slide">
-        <div class="slider-card">
-          <div class="info">
-            <img src="https://cdn.shopify.com/s/files/1/0827/1410/0036/files/Liquid-beans-coffee-extract-nieuwsbrief-1365x2048.jpg?v=1714200840" />
-            <span>test name</span>
-          </div>
-          <video
-            autoplay
-            muted
-            loop>
-            <source src="https://cdn.shopify.com/videos/c/o/v/2bf4bbcbd67b40909bbf2b6172afdcaf.mp4" type="video/mp4">
-          </video>
-          <div class="text">dummy text</div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="slider-card">
-          <div class="info">
-            <img src="https://cdn.shopify.com/s/files/1/0827/1410/0036/files/Liquid-beans-coffee-extract-nieuwsbrief-1365x2048.jpg?v=1714200840" />
-            <span>test name</span>
-          </div>
-          <video
-            autoplay
-            muted
-            loop>
-            <source src="https://cdn.shopify.com/videos/c/o/v/2bf4bbcbd67b40909bbf2b6172afdcaf.mp4" type="video/mp4">
-          </video>
-          <div class="text">dummy text</div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="slider-card">
-          <div class="info">
-            <img src="https://cdn.shopify.com/s/files/1/0827/1410/0036/files/Liquid-beans-coffee-extract-nieuwsbrief-1365x2048.jpg?v=1714200840" />
-            <span>test name</span>
-          </div>
-          <video
-            autoplay
-            muted
-            loop>
-            <source src="https://cdn.shopify.com/videos/c/o/v/2bf4bbcbd67b40909bbf2b6172afdcaf.mp4" type="video/mp4">
-          </video>
-          <div class="text">dummy text</div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="slider-card">
-          <div class="info">
-            <img src="https://cdn.shopify.com/s/files/1/0827/1410/0036/files/Liquid-beans-coffee-extract-nieuwsbrief-1365x2048.jpg?v=1714200840" />
-            <span>test name</span>
-          </div>
-          <video
-            autoplay
-            muted
-            loop>
-            <source src="https://cdn.shopify.com/videos/c/o/v/2bf4bbcbd67b40909bbf2b6172afdcaf.mp4" type="video/mp4">
-          </video>
-          <div class="text">dummy text</div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="slider-card">
-          <div class="info">
-            <img src="https://cdn.shopify.com/s/files/1/0827/1410/0036/files/Liquid-beans-coffee-extract-nieuwsbrief-1365x2048.jpg?v=1714200840" />
-            <span>test name</span>
-          </div>
-          <video
-            autoplay
-            muted
-            loop>
-            <source src="https://cdn.shopify.com/videos/c/o/v/2bf4bbcbd67b40909bbf2b6172afdcaf.mp4" type="video/mp4">
-          </video>
-          <div class="text">dummy text</div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="slider-card">
-          <div class="info">
-            <img src="https://cdn.shopify.com/s/files/1/0827/1410/0036/files/Liquid-beans-coffee-extract-nieuwsbrief-1365x2048.jpg?v=1714200840" />
-            <span>test name</span>
-          </div>
-          <video
-            autoplay
-            muted
-            loop>
-            <source src="https://cdn.shopify.com/videos/c/o/v/2bf4bbcbd67b40909bbf2b6172afdcaf.mp4" type="video/mp4">
-          </video>
-          <div class="text">dummy text</div>
-        </div>
-      </div>
+          <script>
+            {% for source in block.settings.review_video.sources %}
+            console.log("{{ source.url }}")
+              {% endfor %}
+          </script>
+          {% endcase %}
+      {% endfor %}
     </div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
@@ -186,8 +112,8 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@7/swiper-bundle.min.js"></script>
 
-<!-- Initialize Swiper -->
-<script>
+  <!-- Initialize Swiper -->
+  <script>
     var swiper = new Swiper(".mySwiper", {
       slidesPerView: 1,
       spaceBetween: 0,
@@ -210,16 +136,51 @@
         },
       }
     });
-</script>
+  </script>
 
 {% schema %}
   {
-    "name": "Custom Product Slider",
-    "settings": [],
-    "presets": [
+    "name": "Influencer Reviews Slider",
+    "settings": [
       {
-        "name": "Custom Product Slider"
+        "type": "text",
+        "id": "main-heading",
+        "label": "Main heading of section",
+        "default": "Real Customer Reviews"
       }
-    ]
+    ],
+    "blocks": [
+     {
+       "name": "Slide",
+       "type": "slide",
+       "settings": [
+         {
+           "type": "video",
+            "id": "review_video",
+            "label": "Select review video"
+         },
+         {
+           "type": "image_picker",
+           "id": "influencer_image",
+           "label": "Select influencer image"
+         },
+         {
+           "type":"text",
+           "id": "product_title",
+           "label": "Enter product title"
+         },
+         {
+           "type": "text",
+           "id": "influencer_name",
+           "label": "Enter influencer name"
+         }
+       ]
+     }
+  ],
+      "presets": [
+    {
+      "name": "Influencer Reviews Slider"
+    }
+  ]
   }
 {% endschema %}
