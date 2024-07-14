@@ -4,9 +4,7 @@ This repository contains a collection of reusable Shopify theme sections that ca
 
 ## Sections
 
-- [Header Section](./header-section/README.md)
-- [Product Section](./product-section/README.md)
-- [Footer Section](./footer-section/README.md)
+- [Video Reviews Section](./video-reviews-section/README.md)
 
 ## Usage
 
