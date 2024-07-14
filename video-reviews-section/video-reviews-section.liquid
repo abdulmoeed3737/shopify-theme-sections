@@ -1,24 +1,23 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@7/swiper-bundle.min.css" />
-<style>
+
+{% style %}
+
   .{{ section.id }}-custom-product-slider {
     margin-top: 80px;
   }
 
-  .{{ section.id }}
-  -custom-product-slider h1 {
+  .{{ section.id }}-custom-product-slider h1 {
     font-size: 46px;
     text-align: center;
     text-transform: uppercase;
   }
 
-  .{{ section.id }}
-  -custom-product-slider .swiper {
+  .{{ section.id }}-custom-product-slider .swiper {
     width: 100%;
     height: 100%;
   }
 
-  .{{ section.id }}
-  -custom-product-slider .swiper-slide {
+  .{{ section.id }}-custom-product-slider .swiper-slide {
     text-align: center;
     font-size: 18px;
     background: #fff;
@@ -27,19 +26,13 @@
     align-items: center;
   }
 
-  .{{ section.id }}
-  -custom-product-slider .swiper-slide img
-  , .{{ section.id }}
-  -custom-product-slider .swiper-slide video {
+  .{{ section.id }}-custom-product-slider .swiper-slide img, .{{ section.id }}-custom-product-slider .swiper-slide video {
     width: 100%;
     border-radius: 0;
     margin-top: 60px;
   }
 
-  .{{ section.id }}
-  -custom-product-slider .swiper-button-next
-  , .{{ section.id }}
-  -custom-product-slider .swiper-button-prev {
+  .{{ section.id }}-custom-product-slider .swiper-button-next, .{{ section.id }}-custom-product-slider .swiper-button-prev {
     display: flex !important;
     color: #b69a7e;
     background: #0F211E;
@@ -47,13 +40,12 @@
     padding: 25px;
   }
 
-  .{{ section.id }}-custom-product-slider .swiper-button-next:after,
-  .{{ section.id }}-custom-product-slider .swiper-button-prev:after {
+  .{{ section.id }}-custom-product-slider .swiper-button-next:after, .{{ section.id }}-custom-product-slider .swiper-button-prev:after {
     font-size: 18px;
     font-weight: 900;
   }
 
-  .slider-card {
+  .{{ section.id }}-custom-product-slider .slider-card {
     display: flex;
     position: relative;
     flex-direction: column;
@@ -62,14 +54,15 @@
     border-radius: 15px;
   }
 
-  .slider-card .text {
+  .{{ section.id }}-custom-product-slider .slider-card .text {
     padding: 18px;
     font-size: 24px;
     background: #0F211E;
     color: #b69a7e;
     border-radius: 0 0 15px 15px;
   }
-  .slider-card .info {
+
+  .{{ section.id }}-custom-product-slider .slider-card .info {
     display: flex;
     padding: 10px 0;
     justify-content: center;
@@ -80,17 +73,18 @@
     background: #0F211E;
     border-radius: 15px 15px 0 0;
   }
-  .slider-card .info img {
+
+  .{{ section.id }}-custom-product-slider .slider-card .info img {
     width: 40px;
     height: 40px;
     border-radius: 100%;
   }
 
-  .swiper-slide img,
-  .swiper-slide video {
+  .{{ section.id }}-custom-product-slider .swiper-slide img, .{{ section.id }}-custom-product-slider .swiper-slide video {
     margin-top: 0 !important;
   }
-</style>
+
+{% endstyle %}
 
 <div class="{{ section.id }}-custom-product-slider container--large">
   <h1>
@@ -118,11 +112,6 @@
                 <div class="text">{{ block.settings.product_title }}</div>
               </div>
             </div>
-            <script>
-                          {% for source in block.settings.review_video.sources %}
-                          console.log("{{ source.url }}")
-              {% endfor %}
-            </script>
         {% endcase %}
       {% endfor %}
     </div>
@@ -160,7 +149,7 @@
 
 {% schema %}
   {
-    "name": "Influencer Reviews Slider",
+    "name": "Video Reviews Slider",
     "settings": [
       {
         "type": "text",
@@ -196,7 +185,7 @@
     ],
     "presets": [
       {
-        "name": "Influencer Reviews Slider"
+        "name": "Video Reviews Slider"
       }
     ]
   }
