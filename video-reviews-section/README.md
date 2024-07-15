@@ -6,7 +6,7 @@ This section allows you to showcase video reviews on your Shopify store. You can
 
 ## Peview This Section
 
-You can preview this section on the development store by visiting the link here: `https://ecomwithabdul.myshopify.com/pages/video-reviews-section`
+You can preview this section on the development store by visiting the link here: (`https://ecomwithabdul.myshopify.com/pages/video-reviews-section`)[https://ecomwithabdul.myshopify.com/pages/video-reviews-section]
 
 **password for the above mentioned store: `ecomwithabdul`**
 
