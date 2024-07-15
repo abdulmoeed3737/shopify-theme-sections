@@ -4,6 +4,12 @@
 
 This section allows you to showcase video reviews on your Shopify store. You can add as many reviews as you want by simply adding blocks.
 
+## Peview This Section
+
+You can preview this section on the development store by visiting the link here: `https://ecomwithabdul.myshopify.com/pages/video-reviews-section`
+
+**password for the above mentioned store: `ecomwithabdul`**
+
 ## Customization Options
 
 The following fields are customizable:
@@ -12,6 +18,7 @@ The following fields are customizable:
 - Product Name
 - Influencer Profile Picture
 - Review Video
+- Section color Scheme
 
 ## Supported Themes
 
@@ -22,7 +29,7 @@ This section can be added to any Shopify theme, whether free or premium.
 Follow these steps to add the Video Reviews Section to your Shopify store:
 
 1. **Copy the Code**:
-   - Copy the code from the `influencer-reviews-section.liquid` file.
+   - Copy the code from the `video-reviews-section.liquid` file.
 
 2. **Access Shopify Theme Code**:
    - Log in to your Shopify store dashboard.
@@ -35,6 +42,7 @@ Follow these steps to add the Video Reviews Section to your Shopify store:
    - Name the section (e.g., `video-reviews`) and click **Create section**.
 
 4. **Paste the Code**:
+   - Delet the default code that shopify includes in the file.
    - Paste the copied code into the new section file.
    - Click **Save**.
 
